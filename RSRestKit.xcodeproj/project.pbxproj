@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD899F6A1AC4581C009836A7 /* RSRestKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD899F691AC4581C009836A7 /* RSRestKit.h */; };
+		FD899F721AC4581C009836A7 /* libRSRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD899F661AC4581C009836A7 /* libRSRestKit.a */; };
+		FD899F831AC458FC009836A7 /* RSRestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F821AC458FC009836A7 /* RSRestManager.m */; };
+		FD899F8D1AC47848009836A7 /* RSRestPathContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F8C1AC47848009836A7 /* RSRestPathContext.m */; };
+		FD899F921AC540FD009836A7 /* RSRestManagerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F911AC540FD009836A7 /* RSRestManagerConfiguration.m */; };
+		FD899F951AC54304009836A7 /* RSGitHubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F941AC54304009836A7 /* RSGitHubClient.m */; };
+		FD899F981AC56576009836A7 /* RSGitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F971AC56576009836A7 /* RSGitHubUser.m */; };
+		FD899F9B1AC565A8009836A7 /* RSGitHubUsersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F9A1AC565A8009836A7 /* RSGitHubUsersProvider.m */; };
+		FD899F9E1AC5664C009836A7 /* NSURL+RSRestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F9D1AC5664C009836A7 /* NSURL+RSRestPath.m */; };
+		FD899FA01AC5669A009836A7 /* RSGitHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F9F1AC5669A009836A7 /* RSGitHubTests.m */; };
+		FD899FA51AC57A3B009836A7 /* RSRestMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FA41AC57A3B009836A7 /* RSRestMappingProvider.m */; };
+		FD899FA81AC58F85009836A7 /* NSObject+ClassOfProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FA71AC58F85009836A7 /* NSObject+ClassOfProperty.m */; };
+		FD899FAB1AC5A4EC009836A7 /* NSURL+RSRestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899F9D1AC5664C009836A7 /* NSURL+RSRestPath.m */; };
+		FD899FAC1AC5A4F0009836A7 /* NSObject+ClassOfProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FA71AC58F85009836A7 /* NSObject+ClassOfProperty.m */; };
+		FD899FAF1AC5ED0C009836A7 /* NSString+KeyPathComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FAE1AC5ED0C009836A7 /* NSString+KeyPathComponents.m */; };
+		FD899FB01AC5ED0C009836A7 /* NSString+KeyPathComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FAE1AC5ED0C009836A7 /* NSString+KeyPathComponents.m */; };
+		FD899FB31AC5F18F009836A7 /* RSRestBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FB21AC5F18F009836A7 /* RSRestBoolean.m */; };
+		FD899FB61AC5F2C5009836A7 /* RSGitHubUser+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FB51AC5F2C5009836A7 /* RSGitHubUser+Mapping.m */; };
+		FD899FBA1AC5F34D009836A7 /* NSObject+RSRestMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FB91AC5F34D009836A7 /* NSObject+RSRestMapping.m */; };
+		FD899FBB1AC5F34D009836A7 /* NSObject+RSRestMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FB91AC5F34D009836A7 /* NSObject+RSRestMapping.m */; };
+		FD899FBD1AC5F406009836A7 /* RSMappingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FBC1AC5F406009836A7 /* RSMappingTests.m */; };
+		FD899FC11AC69A5B009836A7 /* RSBaseRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FC01AC69A5B009836A7 /* RSBaseRestClient.m */; };
+		FD899FC71AC69BB4009836A7 /* NSError+RSHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FC61AC69BB4009836A7 /* NSError+RSHTTP.m */; };
+		FD899FC81AC69BB4009836A7 /* NSError+RSHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FC61AC69BB4009836A7 /* NSError+RSHTTP.m */; };
+		FD899FCB1AC6AB7C009836A7 /* RSHTTPStatusCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FCA1AC6AB7C009836A7 /* RSHTTPStatusCodes.m */; };
+		FD899FD01AC7E512009836A7 /* RSRestJSONDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FCF1AC7E512009836A7 /* RSRestJSONDateFormatter.m */; };
+		FD899FD31AC93AF7009836A7 /* RSURLAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD899FD21AC93AF6009836A7 /* RSURLAdditionsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD899F731AC4581C009836A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD899F5E1AC4581C009836A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD899F651AC4581C009836A7;
+			remoteInfo = RSRestKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD899F641AC4581C009836A7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				FD899F6A1AC4581C009836A7 /* RSRestKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FD899F661AC4581C009836A7 /* libRSRestKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRSRestKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD899F691AC4581C009836A7 /* RSRestKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSRestKit.h; sourceTree = "<group>"; };
+		FD899F711AC4581C009836A7 /* RSRestKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSRestKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD899F771AC4581C009836A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD899F811AC458FC009836A7 /* RSRestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestManager.h; sourceTree = "<group>"; };
+		FD899F821AC458FC009836A7 /* RSRestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestManager.m; sourceTree = "<group>"; };
+		FD899F8A1AC471AE009836A7 /* RSRestPathContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestPathContext.h; sourceTree = "<group>"; };
+		FD899F8B1AC471DC009836A7 /* RSRestPathProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestPathProvider.h; sourceTree = "<group>"; };
+		FD899F8C1AC47848009836A7 /* RSRestPathContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestPathContext.m; sourceTree = "<group>"; };
+		FD899F8E1AC47C9E009836A7 /* RSRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestClient.h; sourceTree = "<group>"; };
+		FD899F8F1AC53776009836A7 /* RSRestManagerErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestManagerErrorHandler.h; sourceTree = "<group>"; };
+		FD899F901AC53E34009836A7 /* RSRestManagerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestManagerConfiguration.h; sourceTree = "<group>"; };
+		FD899F911AC540FD009836A7 /* RSRestManagerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestManagerConfiguration.m; sourceTree = "<group>"; };
+		FD899F931AC54304009836A7 /* RSGitHubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSGitHubClient.h; sourceTree = "<group>"; };
+		FD899F941AC54304009836A7 /* RSGitHubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSGitHubClient.m; sourceTree = "<group>"; };
+		FD899F961AC56576009836A7 /* RSGitHubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSGitHubUser.h; sourceTree = "<group>"; };
+		FD899F971AC56576009836A7 /* RSGitHubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSGitHubUser.m; sourceTree = "<group>"; };
+		FD899F991AC565A8009836A7 /* RSGitHubUsersProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSGitHubUsersProvider.h; sourceTree = "<group>"; };
+		FD899F9A1AC565A8009836A7 /* RSGitHubUsersProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSGitHubUsersProvider.m; sourceTree = "<group>"; };
+		FD899F9C1AC5664C009836A7 /* NSURL+RSRestPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+RSRestPath.h"; sourceTree = "<group>"; };
+		FD899F9D1AC5664C009836A7 /* NSURL+RSRestPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+RSRestPath.m"; sourceTree = "<group>"; };
+		FD899F9F1AC5669A009836A7 /* RSGitHubTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSGitHubTests.m; sourceTree = "<group>"; };
+		FD899FA21AC5723A009836A7 /* RSRestMappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestMappingProvider.h; sourceTree = "<group>"; };
+		FD899FA41AC57A3B009836A7 /* RSRestMappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestMappingProvider.m; sourceTree = "<group>"; };
+		FD899FA61AC58F85009836A7 /* NSObject+ClassOfProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ClassOfProperty.h"; sourceTree = "<group>"; };
+		FD899FA71AC58F85009836A7 /* NSObject+ClassOfProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ClassOfProperty.m"; sourceTree = "<group>"; };
+		FD899FAD1AC5ED0C009836A7 /* NSString+KeyPathComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyPathComponents.h"; sourceTree = "<group>"; };
+		FD899FAE1AC5ED0C009836A7 /* NSString+KeyPathComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyPathComponents.m"; sourceTree = "<group>"; };
+		FD899FB11AC5F18F009836A7 /* RSRestBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestBoolean.h; sourceTree = "<group>"; };
+		FD899FB21AC5F18F009836A7 /* RSRestBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestBoolean.m; sourceTree = "<group>"; };
+		FD899FB41AC5F2C5009836A7 /* RSGitHubUser+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSGitHubUser+Mapping.h"; sourceTree = "<group>"; };
+		FD899FB51AC5F2C5009836A7 /* RSGitHubUser+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RSGitHubUser+Mapping.m"; sourceTree = "<group>"; };
+		FD899FB81AC5F34D009836A7 /* NSObject+RSRestMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RSRestMapping.h"; sourceTree = "<group>"; };
+		FD899FB91AC5F34D009836A7 /* NSObject+RSRestMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RSRestMapping.m"; sourceTree = "<group>"; };
+		FD899FBC1AC5F406009836A7 /* RSMappingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMappingTests.m; sourceTree = "<group>"; };
+		FD899FBF1AC69A5B009836A7 /* RSBaseRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSBaseRestClient.h; sourceTree = "<group>"; };
+		FD899FC01AC69A5B009836A7 /* RSBaseRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSBaseRestClient.m; sourceTree = "<group>"; };
+		FD899FC51AC69BB4009836A7 /* NSError+RSHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+RSHTTP.h"; sourceTree = "<group>"; };
+		FD899FC61AC69BB4009836A7 /* NSError+RSHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+RSHTTP.m"; sourceTree = "<group>"; };
+		FD899FC91AC6AB61009836A7 /* RSHTTPStatusCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSHTTPStatusCodes.h; sourceTree = "<group>"; };
+		FD899FCA1AC6AB7C009836A7 /* RSHTTPStatusCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSHTTPStatusCodes.m; sourceTree = "<group>"; };
+		FD899FCC1AC7DF72009836A7 /* RSRestJSONFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestJSONFormatter.h; sourceTree = "<group>"; };
+		FD899FCE1AC7E512009836A7 /* RSRestJSONDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSRestJSONDateFormatter.h; sourceTree = "<group>"; };
+		FD899FCF1AC7E512009836A7 /* RSRestJSONDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSRestJSONDateFormatter.m; sourceTree = "<group>"; };
+		FD899FD21AC93AF6009836A7 /* RSURLAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSURLAdditionsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD899F631AC4581C009836A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD899F6E1AC4581C009836A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD899F721AC4581C009836A7 /* libRSRestKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD899F5D1AC4581C009836A7 = {
+			isa = PBXGroup;
+			children = (
+				FD899F681AC4581C009836A7 /* RSRestKit */,
+				FD899F751AC4581C009836A7 /* RSRestKitTests */,
+				FD899F671AC4581C009836A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD899F671AC4581C009836A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD899F661AC4581C009836A7 /* libRSRestKit.a */,
+				FD899F711AC4581C009836A7 /* RSRestKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD899F681AC4581C009836A7 /* RSRestKit */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FA91AC58F8F009836A7 /* Additions */,
+				FD899FBE1AC69A13009836A7 /* Client */,
+				FD899FA31AC57349009836A7 /* Manager */,
+				FD899FB71AC5F32E009836A7 /* Mapping */,
+				FD899FC91AC6AB61009836A7 /* RSHTTPStatusCodes.h */,
+				FD899FCA1AC6AB7C009836A7 /* RSHTTPStatusCodes.m */,
+				FD899FB11AC5F18F009836A7 /* RSRestBoolean.h */,
+				FD899FB21AC5F18F009836A7 /* RSRestBoolean.m */,
+				FD899F691AC4581C009836A7 /* RSRestKit.h */,
+				FD899F8A1AC471AE009836A7 /* RSRestPathContext.h */,
+				FD899F8C1AC47848009836A7 /* RSRestPathContext.m */,
+				FD899F8B1AC471DC009836A7 /* RSRestPathProvider.h */,
+			);
+			path = RSRestKit;
+			sourceTree = "<group>";
+		};
+		FD899F751AC4581C009836A7 /* RSRestKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FD11AC937B0009836A7 /* GitHub Tests */,
+				FD899FBC1AC5F406009836A7 /* RSMappingTests.m */,
+				FD899FD21AC93AF6009836A7 /* RSURLAdditionsTests.m */,
+				FD899F761AC4581C009836A7 /* Supporting Files */,
+			);
+			path = RSRestKitTests;
+			sourceTree = "<group>";
+		};
+		FD899F761AC4581C009836A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD899F771AC4581C009836A7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD899FA31AC57349009836A7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FD899F811AC458FC009836A7 /* RSRestManager.h */,
+				FD899F821AC458FC009836A7 /* RSRestManager.m */,
+				FD899F901AC53E34009836A7 /* RSRestManagerConfiguration.h */,
+				FD899F911AC540FD009836A7 /* RSRestManagerConfiguration.m */,
+				FD899F8F1AC53776009836A7 /* RSRestManagerErrorHandler.h */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		FD899FA91AC58F8F009836A7 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FC51AC69BB4009836A7 /* NSError+RSHTTP.h */,
+				FD899FC61AC69BB4009836A7 /* NSError+RSHTTP.m */,
+				FD899FA61AC58F85009836A7 /* NSObject+ClassOfProperty.h */,
+				FD899FA71AC58F85009836A7 /* NSObject+ClassOfProperty.m */,
+				FD899FAD1AC5ED0C009836A7 /* NSString+KeyPathComponents.h */,
+				FD899FAE1AC5ED0C009836A7 /* NSString+KeyPathComponents.m */,
+				FD899F9C1AC5664C009836A7 /* NSURL+RSRestPath.h */,
+				FD899F9D1AC5664C009836A7 /* NSURL+RSRestPath.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		FD899FB71AC5F32E009836A7 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FB81AC5F34D009836A7 /* NSObject+RSRestMapping.h */,
+				FD899FB91AC5F34D009836A7 /* NSObject+RSRestMapping.m */,
+				FD899FA21AC5723A009836A7 /* RSRestMappingProvider.h */,
+				FD899FA41AC57A3B009836A7 /* RSRestMappingProvider.m */,
+			);
+			name = Mapping;
+			sourceTree = "<group>";
+		};
+		FD899FBE1AC69A13009836A7 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FCD1AC7DF7A009836A7 /* JSON Formatters */,
+				FD899FBF1AC69A5B009836A7 /* RSBaseRestClient.h */,
+				FD899FC01AC69A5B009836A7 /* RSBaseRestClient.m */,
+				FD899F8E1AC47C9E009836A7 /* RSRestClient.h */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		FD899FCD1AC7DF7A009836A7 /* JSON Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FD899FCE1AC7E512009836A7 /* RSRestJSONDateFormatter.h */,
+				FD899FCF1AC7E512009836A7 /* RSRestJSONDateFormatter.m */,
+				FD899FCC1AC7DF72009836A7 /* RSRestJSONFormatter.h */,
+			);
+			name = "JSON Formatters";
+			sourceTree = "<group>";
+		};
+		FD899FD11AC937B0009836A7 /* GitHub Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FD899F931AC54304009836A7 /* RSGitHubClient.h */,
+				FD899F941AC54304009836A7 /* RSGitHubClient.m */,
+				FD899F9F1AC5669A009836A7 /* RSGitHubTests.m */,
+				FD899F961AC56576009836A7 /* RSGitHubUser.h */,
+				FD899F971AC56576009836A7 /* RSGitHubUser.m */,
+				FD899FB41AC5F2C5009836A7 /* RSGitHubUser+Mapping.h */,
+				FD899FB51AC5F2C5009836A7 /* RSGitHubUser+Mapping.m */,
+				FD899F991AC565A8009836A7 /* RSGitHubUsersProvider.h */,
+				FD899F9A1AC565A8009836A7 /* RSGitHubUsersProvider.m */,
+			);
+			name = "GitHub Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD899F651AC4581C009836A7 /* RSRestKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD899F7A1AC4581C009836A7 /* Build configuration list for PBXNativeTarget "RSRestKit" */;
+			buildPhases = (
+				FD899F621AC4581C009836A7 /* Sources */,
+				FD899F631AC4581C009836A7 /* Frameworks */,
+				FD899F641AC4581C009836A7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSRestKit;
+			productName = RSRestKit;
+			productReference = FD899F661AC4581C009836A7 /* libRSRestKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FD899F701AC4581C009836A7 /* RSRestKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD899F7D1AC4581C009836A7 /* Build configuration list for PBXNativeTarget "RSRestKitTests" */;
+			buildPhases = (
+				FD899F6D1AC4581C009836A7 /* Sources */,
+				FD899F6E1AC4581C009836A7 /* Frameworks */,
+				FD899F6F1AC4581C009836A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD899F741AC4581C009836A7 /* PBXTargetDependency */,
+			);
+			name = RSRestKitTests;
+			productName = RSRestKitTests;
+			productReference = FD899F711AC4581C009836A7 /* RSRestKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD899F5E1AC4581C009836A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RS;
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					FD899F651AC4581C009836A7 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FD899F701AC4581C009836A7 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = FD899F611AC4581C009836A7 /* Build configuration list for PBXProject "RSRestKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD899F5D1AC4581C009836A7;
+			productRefGroup = FD899F671AC4581C009836A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD899F651AC4581C009836A7 /* RSRestKit */,
+				FD899F701AC4581C009836A7 /* RSRestKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD899F6F1AC4581C009836A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD899F621AC4581C009836A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD899F9E1AC5664C009836A7 /* NSURL+RSRestPath.m in Sources */,
+				FD899FAF1AC5ED0C009836A7 /* NSString+KeyPathComponents.m in Sources */,
+				FD899FC71AC69BB4009836A7 /* NSError+RSHTTP.m in Sources */,
+				FD899FA51AC57A3B009836A7 /* RSRestMappingProvider.m in Sources */,
+				FD899F831AC458FC009836A7 /* RSRestManager.m in Sources */,
+				FD899FCB1AC6AB7C009836A7 /* RSHTTPStatusCodes.m in Sources */,
+				FD899FC11AC69A5B009836A7 /* RSBaseRestClient.m in Sources */,
+				FD899F8D1AC47848009836A7 /* RSRestPathContext.m in Sources */,
+				FD899FBA1AC5F34D009836A7 /* NSObject+RSRestMapping.m in Sources */,
+				FD899FB31AC5F18F009836A7 /* RSRestBoolean.m in Sources */,
+				FD899FD01AC7E512009836A7 /* RSRestJSONDateFormatter.m in Sources */,
+				FD899FA81AC58F85009836A7 /* NSObject+ClassOfProperty.m in Sources */,
+				FD899F921AC540FD009836A7 /* RSRestManagerConfiguration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD899F6D1AC4581C009836A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD899F9B1AC565A8009836A7 /* RSGitHubUsersProvider.m in Sources */,
+				FD899FB01AC5ED0C009836A7 /* NSString+KeyPathComponents.m in Sources */,
+				FD899FD31AC93AF7009836A7 /* RSURLAdditionsTests.m in Sources */,
+				FD899FA01AC5669A009836A7 /* RSGitHubTests.m in Sources */,
+				FD899FBD1AC5F406009836A7 /* RSMappingTests.m in Sources */,
+				FD899F981AC56576009836A7 /* RSGitHubUser.m in Sources */,
+				FD899FAB1AC5A4EC009836A7 /* NSURL+RSRestPath.m in Sources */,
+				FD899FC81AC69BB4009836A7 /* NSError+RSHTTP.m in Sources */,
+				FD899FBB1AC5F34D009836A7 /* NSObject+RSRestMapping.m in Sources */,
+				FD899FAC1AC5A4F0009836A7 /* NSObject+ClassOfProperty.m in Sources */,
+				FD899F951AC54304009836A7 /* RSGitHubClient.m in Sources */,
+				FD899FB61AC5F2C5009836A7 /* RSGitHubUser+Mapping.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD899F741AC4581C009836A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD899F651AC4581C009836A7 /* RSRestKit */;
+			targetProxy = FD899F731AC4581C009836A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FD899F781AC4581C009836A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD899F791AC4581C009836A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD899F7B1AC4581C009836A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FD899F7C1AC4581C009836A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FD899F7E1AC4581C009836A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RSRestKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD899F7F1AC4581C009836A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RSRestKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD899F611AC4581C009836A7 /* Build configuration list for PBXProject "RSRestKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD899F781AC4581C009836A7 /* Debug */,
+				FD899F791AC4581C009836A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD899F7A1AC4581C009836A7 /* Build configuration list for PBXNativeTarget "RSRestKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD899F7B1AC4581C009836A7 /* Debug */,
+				FD899F7C1AC4581C009836A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD899F7D1AC4581C009836A7 /* Build configuration list for PBXNativeTarget "RSRestKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD899F7E1AC4581C009836A7 /* Debug */,
+				FD899F7F1AC4581C009836A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD899F5E1AC4581C009836A7 /* Project object */;
+}
