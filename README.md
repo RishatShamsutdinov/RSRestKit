@@ -82,14 +82,14 @@ static NSTimeInterval const kTimeoutInterval = 30;
 ###### Configure Rest Manager
 
 ```Objective-C
-    RSRestManagerConfiguration *config = [RSRestManagerConfiguration
-                                          configurationWithClient:[RSGitHubClient new]
-                                          defaultErrorHandler:nil
-                                          mappingProvider:[RSRestMappingProvider class]];
+RSRestManagerConfiguration *config = [RSRestManagerConfiguration
+                                      configurationWithClient:[RSGitHubClient new]
+                                      defaultErrorHandler:nil
+                                      mappingProvider:[RSRestMappingProvider class]];
 
-    [config setPathProvider:[RSGitHubUsersProvider class] forClass:[RSGitHubUser class]];
+[config setPathProvider:[RSGitHubUsersProvider class] forClass:[RSGitHubUser class]];
 
-    [[RSRestManager sharedManager] configureWithConfiguration:config];
+[[RSRestManager sharedManager] configureWithConfiguration:config];
 ```
 
 ###### Create Model
@@ -122,13 +122,13 @@ static NSTimeInterval const kTimeoutInterval = 30;
 ###### Get User by Login
 
 ```Objective-C
-    RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[RSGitHubUser class] byId:@"RishatShamsutdinov"];
+RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[RSGitHubUser class] byId:@"RishatShamsutdinov"];
 
-    [op readyWithSuccessBlock:^(RSGitHubUser *user) {
-        NSLog(@"Login: %@, Creation Date: %@", user.login, user.creationDate);
-    } failureBlock:^BOOL(NSError *error) {
-        NSLog(@"Error occured: %@", error);
+[op readyWithSuccessBlock:^(RSGitHubUser *user) {
+    NSLog(@"Login: %@, Creation Date: %@", user.login, user.creationDate);
+} failureBlock:^BOOL(NSError *error) {
+    NSLog(@"Error occured: %@", error);
 
-        return YES;
-    }];
+    return YES;
+}];
 ```
