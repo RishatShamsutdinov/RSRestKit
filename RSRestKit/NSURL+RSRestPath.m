@@ -67,18 +67,12 @@
 }
 
 - (instancetype)rs_URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary {
-    static NSString * const kQueryPrefix = @"?";
-    static NSString * const kQuerySeparator = @"&";
-
-    NSMutableString *queryString = [NSMutableString new];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
+    NSMutableArray *queryItems = [NSMutableArray arrayWithArray:components.queryItems];
 
     [queryDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if (obj == [NSNull null]) {
             return;
-        }
-
-        if (queryString.length) {
-            [queryString appendString:kQuerySeparator];
         }
 
         id value = obj;
@@ -89,67 +83,28 @@
             value = [value boolValue] ? @"true" : @"false";
         }
 
-        if ([value isKindOfClass:[NSString class]]) {
-            value = [self rs_addPercentEncodingForString:value];
+        if (![value isKindOfClass:[NSString class]]) {
+            value = [value description];
         }
 
-        [queryString appendFormat:@"%@=%@", [self rs_addPercentEncodingForString:key], value];
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:value]];
     }];
 
-    NSMutableString *string = [self.absoluteString mutableCopy];
+    components.queryItems = queryItems;
 
-    if (queryString.length) {
-        if (![string hasSuffix:@"/"]) {
-            [string appendString:@"/"];
-        }
-
-        if (![string hasSuffix:kQueryPrefix]) {
-            [string appendString:kQueryPrefix];
-        }
-
-        [string appendString:queryString];
-    }
-
-    return [NSURL URLWithString:string];
-}
-
-- (NSString *)rs_addPercentEncodingForString:(NSString *)string {
-    static NSCharacterSet *allowedCharacterSet;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        allowedCharacterSet = [NSCharacterSet characterSetWithCharactersInString:
-                               @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789*-._"];
-    });
-
-    return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
+    return components.URL;
 }
 
 - (instancetype)rs_URLRelativeToHost {
-    NSString *host = self.host;
+    NSURLComponents *components = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:YES];
 
-    if (!host.length) {
-        return [self copy];
-    }
+    components.user = nil;
+    components.password = nil;
+    components.host = nil;
+    components.scheme = nil;
+    components.port = nil;
 
-    NSString *path = self.path;
-    NSString *query = self.query;
-    NSString *fragment = self.fragment;
-
-    if (!path.length) {
-        return nil;
-    }
-
-    NSMutableString *string = [NSMutableString stringWithString:path];
-
-    if (query.length) {
-        [string appendFormat:@"?%@", query];
-    }
-
-    if (fragment.length) {
-        [string appendFormat:@"#%@", fragment];
-    }
-
-    return [NSURL URLWithString:string];
+    return components.URL;
 }
 
 @end

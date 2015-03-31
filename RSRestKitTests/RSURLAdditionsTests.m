@@ -46,7 +46,7 @@
 
 - (void)testURLByAppendingQueryDictionary {
     NSURL *baseURL = [NSURL URLWithString:@"https://domain.com"];
-    NSURL *URL = [NSURL URLWithString:@"https://domain.com/?key1=value1&%D0%BA%D0%BB%D1%8E%D1%872=%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B52"];
+    NSURL *URL = [NSURL URLWithString:@"https://domain.com?key1=value1&%D0%BA%D0%BB%D1%8E%D1%872=%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B52"];
 
     XCTAssertEqualObjects(URL, ([baseURL rs_URLByAppendingQueryDictionary:@{@"key1": @"value1",
                                                                             @"ключ2": @"значение2"}]));
@@ -54,10 +54,10 @@
 
 - (void)testURLRelativeToHost {
     XCTAssertEqualObjects([NSURL URLWithString:@"/1/2/3?q=v#f"],
-                          [[NSURL URLWithString:@"https://user@https/1/2/3?q=v#f"] rs_URLRelativeToHost]);
+                          [[NSURL URLWithString:@"https://user@https:443/1/2/3?q=v#f"] rs_URLRelativeToHost]);
     XCTAssertEqualObjects([NSURL URLWithString:@"/1/2/3?q=v"],
                           [[NSURL URLWithString:@"https://user@https/1/2/3?q=v"] rs_URLRelativeToHost]);
-    XCTAssertEqualObjects([NSURL URLWithString:@"/1/2/3#f"],
+    XCTAssertEqualObjects([NSURL URLWithString:@"/1/2/3?#f"],
                           [[NSURL URLWithString:@"https://user@https/1/2/3?#f"] rs_URLRelativeToHost]);
     XCTAssertEqualObjects([NSURL URLWithString:@"/1/2/3"],
                           [[NSURL URLWithString:@"https://user@https/1/2/3"] rs_URLRelativeToHost]);
