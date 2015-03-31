@@ -158,7 +158,6 @@ RSRestPathContext *context = [RSRestPathContext contextWithObjectClass:[User cla
                                                          parentContext:nil];
 
 RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[FollowersResponse class]
-                                                                         byId:userId
                                                                     inContext:context];
 
 [op readyWithSuccessBlock:^(FollowersResponse *followers) {
