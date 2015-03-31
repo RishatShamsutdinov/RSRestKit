@@ -37,6 +37,7 @@
 - (void)configureWithConfiguration:(id<RSRestManagerConfiguration>)configuration;
 
 - (RSRestManagerOperation *)getObjectForClass:(Class)aClass byId:(NSString *)objectID;
+- (RSRestManagerOperation *)getObjectForClass:(Class)aClass inContext:(RSRestPathContext *)context;
 - (RSRestManagerOperation *)getObjectForClass:(Class)aClass byId:(NSString *)objectID
                                     inContext:(RSRestPathContext *)context;
 - (RSRestManagerOperation *)getObjectForClass:(Class)aClass byRelativeURL:(NSURL *)relativeURL;

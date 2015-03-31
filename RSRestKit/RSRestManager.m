@@ -109,7 +109,11 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 - (NSURL *)relativeURLForObjectClass:(Class)aClass withId:(NSString *)objectID inContext:(RSRestPathContext *)context {
     Class<RSRestPathProvider> provider = [self pathProviderForClass:aClass];
 
-    NSURL *objectRelativeURL = [[provider relativeURL] rs_URLByAppendingObjectID:objectID];
+    NSURL *objectRelativeURL = [provider relativeURL];
+
+    if (objectID || !context) {
+        objectRelativeURL = [objectRelativeURL rs_URLByAppendingObjectID:objectID];
+    }
 
     if (!objectRelativeURL) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
@@ -200,6 +204,10 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 
 - (RSRestManagerOperation *)getObjectForClass:(Class)aClass byId:(NSString *)objectID {
     return [self getObjectForClass:aClass byId:objectID inContext:nil];
+}
+
+- (RSRestManagerOperation *)getObjectForClass:(Class)aClass inContext:(RSRestPathContext *)context {
+    return [self getObjectForClass:aClass byId:nil inContext:context];
 }
 
 - (RSRestManagerOperation *)getObjectForClass:(Class)aClass byId:(NSString *)objectID
