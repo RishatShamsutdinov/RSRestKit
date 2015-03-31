@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                    The main idea of this framework is to simplify working with REST API: from mapping to requests to RESTful web service.
-                   Also, 
                    DESC
 
   s.homepage     = "https://github.com/RishatShamsutdinov/RSRestKit"
