@@ -132,3 +132,43 @@ RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[R
     return YES;
 }];
 ```
+
+# Context of Path
+
+For example, you want to get followers of user with some id. All that you need is:
+###### 1. Create model & mapping for followers response
+###### 2. Create path provider for followers response
+```Objective-C
++ (NSURL *)relativeURL {
+    return [NSURL URLWithString:@"followers"];
+}
+
++ (NSURL *)relativeURLForObject:(id)anObject {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"Not supported for followers"]
+                                 userInfo:nil];
+}
+```
+
+###### 3. Get followers using rest manager
+
+```Objective-C
+NSString *userId = @"some id here";
+RSRestPathContext *context = [RSRestPathContext contextWithObjectClass:[User class] objectID:userId
+                                                         parentContext:nil];
+
+RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[FollowersResponse class]
+                                                                         byId:userId
+                                                                    inContext:context];
+
+[op readyWithSuccessBlock:^(FollowersResponse *followers) {
+    // do something
+} failureBlock:^BOOL(NSError *error) {
+    NSLog(@"Error occured: %@", error);
+
+    return YES;
+}];
+```
+
+# Examples
+Soon.
