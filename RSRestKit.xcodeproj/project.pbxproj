@@ -532,6 +532,7 @@
 				FD899F7C1AC4581C009836A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD899F7D1AC4581C009836A7 /* Build configuration list for PBXNativeTarget "RSRestKitTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +541,7 @@
 				FD899F7F1AC4581C009836A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

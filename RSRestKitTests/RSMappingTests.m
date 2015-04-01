@@ -42,6 +42,7 @@
 @property (nonatomic) NSString *deepStr;
 @property (nonatomic) NSOrderedSet *relObjOrderedSet;
 @property (nonatomic) NSDate *date;
+@property (nonatomic) NSNumber *boolNum;
 
 @end
 
@@ -55,6 +56,7 @@ static NSString * const kNameKey = @"name";
 static NSString * const kDeepStrLevel1Key = @"level1";
 static NSString * const kDeepStrLevel2Key = @"level2";
 static NSString * const kRelsForSetKey = @"relsForSet";
+static NSString * const kBoolNumKey = @"boolKey";
 
 @implementation TestRelObject
 
@@ -74,7 +76,8 @@ static NSString * const kRelsForSetKey = @"relsForSet";
              kRelKey: RS_PROPERTY(relObj),
              kRelsKey: RS_RELATIONSHIP(relsObj, [TestRelObject class]),
              [NSString stringWithFormat:@"%@.%@", kDeepStrLevel1Key, kDeepStrLevel2Key]: RS_PROPERTY(deepStr),
-             kRelsForSetKey: RS_RELATIONSHIP(relObjOrderedSet, [TestRelObject class])};
+             kRelsForSetKey: RS_RELATIONSHIP(relObjOrderedSet, [TestRelObject class]),
+             kBoolNumKey: RS_BOOL_NUM_PROPERTY(boolNum)};
 }
 
 @end
@@ -89,7 +92,8 @@ static NSString * const kRelsForSetKey = @"relsForSet";
                                   kRelKey: @{kNameKey: @"d1"},
                                   kRelsKey: @[@{kNameKey: @"a1"}, @{kNameKey: @"a2"}],
                                   kDeepStrLevel1Key: @{kDeepStrLevel2Key: @"deep"},
-                                  kRelsForSetKey: @[@{kNameKey: @"a1"}, @{kNameKey: @"a2"}]};
+                                  kRelsForSetKey: @[@{kNameKey: @"a1"}, @{kNameKey: @"a2"}],
+                                  kBoolNumKey: @(YES)};
 
     TestObject *obj = [RSRestMappingProvider mapDictionary:dict
                                            toObjectOfClass:[TestObject class]];
@@ -110,6 +114,7 @@ static NSString * const kRelsForSetKey = @"relsForSet";
 
     XCTAssertEqualObjects(dict[kDeepStrLevel1Key][kDeepStrLevel2Key], obj.deepStr);
     XCTAssertTrue([obj.relObjOrderedSet isKindOfClass:[NSOrderedSet class]]);
+    XCTAssertEqual(dict[kBoolNumKey], obj.boolNum);
 }
 
 - (void)testMapObjToDict {
@@ -130,6 +135,7 @@ static NSString * const kRelsForSetKey = @"relsForSet";
     obj.relsObj = @[relObjA1, relObjA2];
     obj.deepStr = @"deep";
     obj.relObjOrderedSet = [NSOrderedSet orderedSetWithArray:@[relObjA1, relObjA2]];
+    obj.boolNum = @(YES);
 
     NSDictionary *dict = [RSRestMappingProvider mapObjectToDictionary:obj];
 
@@ -149,6 +155,7 @@ static NSString * const kRelsForSetKey = @"relsForSet";
 
     XCTAssertEqual(dict.count, [[obj class] rs_mappingDictionary].count);
     XCTAssertEqualObjects(dict[kDeepStrLevel1Key][kDeepStrLevel2Key], obj.deepStr);
+    XCTAssertEqual(dict[kBoolNumKey], obj.boolNum);
 }
 
 @end

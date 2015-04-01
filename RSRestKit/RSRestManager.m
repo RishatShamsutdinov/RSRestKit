@@ -20,6 +20,8 @@
 
 #import "RSRestManager.h"
 #import "RSRestClient.h"
+#import "NSObject+ClassOfProperty.h"
+#import <objc/runtime.h>
 
 typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 
@@ -133,6 +135,17 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
     }
 
     Class<RSRestPathProvider> provider = [self pathProviderForClass:[anObject class]];
+
+    SEL relativeURLForObjectSelector = @selector(relativeURLForObject:);
+
+    if (class_getClassMethod(provider, relativeURLForObjectSelector) == NULL) {
+        @throw [NSException
+                exceptionWithName:NSInternalInconsistencyException
+                reason:[NSString stringWithFormat:@"Method %@ isn't implemented for path provider of %@",
+                        NSStringFromSelector(relativeURLForObjectSelector),
+                        NSStringFromClass([anObject class])]
+                userInfo:nil];
+    }
 
     NSURL *objectRelativeURL = [provider relativeURLForObject:anObject];
 

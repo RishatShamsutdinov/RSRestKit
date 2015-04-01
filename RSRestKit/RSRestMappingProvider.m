@@ -173,7 +173,7 @@
 }
 
 - (instancetype)initWithName:(NSString *)name class:(Class)aClass {
-    if (aClass && ![aClass rs_hasMapping]) {
+    if (aClass && ![aClass rs_hasMapping] && aClass != [RSRestBoolean class]) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
                                        reason:@"aClass doesn't have mapping"
                                      userInfo:nil];

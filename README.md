@@ -142,12 +142,6 @@ For example, you want to get followers of user with some id. All that you need i
 + (NSURL *)relativeURL {
     return [NSURL URLWithString:@"followers"];
 }
-
-+ (NSURL *)relativeURLForObject:(id)anObject {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:@"Not supported for followers"]
-                                 userInfo:nil];
-}
 ```
 
 ###### 3. Get followers using rest manager

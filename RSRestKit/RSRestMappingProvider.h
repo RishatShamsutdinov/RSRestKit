@@ -44,6 +44,8 @@
 @end
 
 #define RS_PROPERTY(prop) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) class:nil])
+#define RS_BOOL_NUM_PROPERTY(prop) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) \
+                                                               class:[RSRestBoolean class]])
 #define RS_RELATIONSHIP(prop, cl) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) class:(cl)])
 
 @interface RSRestPropertyInfo : NSObject

@@ -25,6 +25,7 @@
 
 + (NSURL *)relativeURL;
 
+@optional
 + (NSURL *)relativeURLForObject:(id)anObject;
 
 @end
