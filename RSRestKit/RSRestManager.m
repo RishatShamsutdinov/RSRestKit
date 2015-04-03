@@ -77,6 +77,19 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
     });
 }
 
+- (Class<RSRestPathProvider>)existingPathProviderForClass:(Class)aClass {
+    Class<RSRestPathProvider> provider = [self pathProviderForClass:aClass];
+
+    if (!provider) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:[NSString stringWithFormat:@"No provider found for class: %@",
+                                               NSStringFromClass(aClass)]
+                                     userInfo:nil];
+    }
+
+    return provider;
+}
+
 - (Class<RSRestPathProvider>)pathProviderForClass:(Class)aClass {
     if (!aClass) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
@@ -92,13 +105,6 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 
     if (!provider && [aClass superclass]) {
         provider = [self pathProviderForClass:[aClass superclass]];
-    }
-
-    if (!provider) {
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:[NSString stringWithFormat:@"No provider found for class: %@",
-                                               NSStringFromClass(aClass)]
-                                     userInfo:nil];
     }
 
     return provider;
@@ -142,7 +148,7 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 }
 
 - (NSURL *)relativeURLForObjectClass:(Class)aClass withId:(NSString *)objectID inContext:(RSRestPathContext *)context {
-    Class<RSRestPathProvider> provider = [self pathProviderForClass:aClass];
+    Class<RSRestPathProvider> provider = [self existingPathProviderForClass:aClass];
 
     NSURL *objectRelativeURL = [provider relativeURL];
 
@@ -167,7 +173,7 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
                                      userInfo:nil];
     }
 
-    Class<RSRestPathProvider> provider = [self pathProviderForClass:[anObject class]];
+    Class<RSRestPathProvider> provider = [self existingPathProviderForClass:[anObject class]];
 
     SEL relativeURLForObjectSelector = @selector(relativeURLForObject:);
 
