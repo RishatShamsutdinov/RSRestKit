@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RSRestKit"
-  s.version      = "0.1.2"
+  s.version      = "0.1.5"
   s.summary      = "Simple framework for REST API with routing & mapping support"
 
   s.description  = <<-DESC
@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/RishatShamsutdinov/RSRestKit.git", :tag => "v0.1.2" }
+  s.source       = { :git => "https://github.com/RishatShamsutdinov/RSRestKit.git", :tag => "v" + s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

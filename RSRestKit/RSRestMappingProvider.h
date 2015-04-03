@@ -17,7 +17,6 @@
  */
 
 
-
 #import <Foundation/Foundation.h>
 #import "RSRestBoolean.h"
 
@@ -44,9 +43,10 @@
 @end
 
 #define RS_PROPERTY(prop) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) class:nil])
-#define RS_BOOL_NUM_PROPERTY(prop) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) \
-                                                               class:[RSRestBoolean class]])
-#define RS_RELATIONSHIP(prop, cl) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) class:(cl)])
+#define RS_CONCRETE_PROPERTY(prop, cl) ([RSRestPropertyInfo infoWithName:NSStringFromSelector(@selector(prop)) \
+                                                                   class:(cl)])
+#define RS_BOOL_NUM_PROPERTY(prop) RS_CONCRETE_PROPERTY(prop, [RSRestBoolean class])
+#define RS_RELATIONSHIP(prop, cl) RS_CONCRETE_PROPERTY(prop, cl)
 
 @interface RSRestPropertyInfo : NSObject
 

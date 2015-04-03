@@ -15,7 +15,6 @@
  * limitations under the License.
  *
  */
-
 #import "RSGitHubUsersProvider.h"
 #import "RSGitHubUser.h"
 

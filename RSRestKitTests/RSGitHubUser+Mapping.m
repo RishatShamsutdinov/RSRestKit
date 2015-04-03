@@ -15,7 +15,6 @@
  * limitations under the License.
  *
  */
-
 #import "RSGitHubUser+Mapping.h"
 #import "RSRestMappingProvider.h"
 

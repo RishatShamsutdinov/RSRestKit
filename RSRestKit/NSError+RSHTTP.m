@@ -17,7 +17,6 @@
  */
 
 
-
 #import "NSError+RSHTTP.h"
 
 NSString * const RSHTTPErrorDomain = @"RSHTTPErrorDomain";

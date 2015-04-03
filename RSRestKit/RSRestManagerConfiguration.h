@@ -17,13 +17,27 @@
  */
 
 
-
 #import <Foundation/Foundation.h>
 #import "RSRestPathProvider.h"
 #import "RSRestClient.h"
 #import "RSRestManagerErrorHandler.h"
 #import "RSRestMappingProvider.h"
 
+@protocol RSRestObject <NSObject>
+
+@end
+
+/**
+ * Path providers for classes has higher priority than path providers for protocols.
+ *
+ * The algorithm is next:
+ *
+ * 1. Find providers for the class. If found return.
+ *
+ * 2. Find providers for protocols from the class. If found return.
+ *
+ * 3. Repeat 1-3 for superclass of the class
+ */
 @protocol RSRestManagerConfiguration <NSObject>
 
 - (id<RSRestClient>)client;
@@ -31,6 +45,11 @@
 - (Class<RSRestMappingProvider>)mappingProvider;
 
 - (Class<RSRestPathProvider>)pathProviderForClass:(Class)aClass;
+
+/**
+ * @param aProtocol must extends RSRestObject protocol
+ */
+- (Class<RSRestPathProvider>)pathProviderForProtocol:(Protocol *)aProtocol;
 
 - (id<RSRestManagerErrorHandler>)defaultErrorHandler;
 
@@ -52,5 +71,7 @@
                mappingProvider:(Class<RSRestMappingProvider>)mappingProvider;
 
 - (void)setPathProvider:(Class<RSRestPathProvider>)pathProvider forClass:(Class)aClass;
+
+- (void)setPathProvider:(Class<RSRestPathProvider>)pathProvider forProtocol:(Protocol *)aProtocol;
 
 @end

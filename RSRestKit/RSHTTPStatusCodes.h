@@ -17,7 +17,6 @@
  */
 
 
-
 #ifndef RSRestKit_RSHTTPStatusCodes_h
 #define RSRestKit_RSHTTPStatusCodes_h
 

@@ -17,7 +17,6 @@
  */
 
 
-
 #import <Foundation/Foundation.h>
 
 NSUInteger const RSHTTPStatusCodeOk = 200;

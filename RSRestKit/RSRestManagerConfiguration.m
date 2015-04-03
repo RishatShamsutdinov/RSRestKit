@@ -16,9 +16,11 @@
  *
  */
 
-
-
 #import "RSRestManagerConfiguration.h"
+#import <objc/runtime.h>
+
+#define CLASS_KEY(cl) ([NSString stringWithFormat:@"@class %@", NSStringFromClass(cl)])
+#define PROTOCOL_KEY(p) ([NSString stringWithFormat:@"@protocol %@", NSStringFromProtocol(p)])
 
 @interface RSRestManagerConfiguration () {
     NSMutableDictionary *_pathProviders;
@@ -57,11 +59,27 @@
 }
 
 - (void)setPathProvider:(Class<RSRestPathProvider>)pathProvider forClass:(Class)aClass {
-    _pathProviders[NSStringFromClass(aClass)] = pathProvider;
+    _pathProviders[CLASS_KEY(aClass)] = pathProvider;
+}
+
+- (void)setPathProvider:(Class<RSRestPathProvider>)pathProvider forProtocol:(Protocol *)aProtocol {
+    if (!protocol_conformsToProtocol(aProtocol, @protocol(RSRestObject))) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:[NSString stringWithFormat:@"aProtocol %@ does not conforms to %@",
+                                               NSStringFromProtocol(aProtocol),
+                                               NSStringFromProtocol(@protocol(RSRestObject))]
+                                     userInfo:nil];
+    }
+
+    _pathProviders[PROTOCOL_KEY(aProtocol)] = pathProvider;
 }
 
 - (Class<RSRestPathProvider>)pathProviderForClass:(Class)aClass {
-    return _pathProviders[NSStringFromClass(aClass)];
+    return _pathProviders[CLASS_KEY(aClass)];
+}
+
+- (Class<RSRestPathProvider>)pathProviderForProtocol:(Protocol *)aProtocol {
+    return _pathProviders[PROTOCOL_KEY(aProtocol)];
 }
 
 @end

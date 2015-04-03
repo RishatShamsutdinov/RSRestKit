@@ -17,7 +17,6 @@
  */
 
 
-
 #import <Foundation/Foundation.h>
 #import "RSRestClient.h"
 #import "RSRestJSONFormatter.h"

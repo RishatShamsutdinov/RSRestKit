@@ -17,7 +17,6 @@
  */
 
 
-
 #import "RSRestManager.h"
 #import "RSRestClient.h"
 #import "NSObject+ClassOfProperty.h"
@@ -89,7 +88,37 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
     Class<RSRestPathProvider> provider = [_configuration pathProviderForClass:aClass];
 
     if (!provider) {
-        return [self pathProviderForClass:[aClass superclass]];
+        provider = [self pathProviderForProtocolFromClass:aClass];
+    }
+
+    if (!provider) {
+        provider = [self pathProviderForClass:[aClass superclass]];
+    }
+
+    return provider;
+}
+
+- (Class<RSRestPathProvider>)pathProviderForProtocolFromClass:(Class)aClass {
+    uint protocolsCount;
+    Protocol __unsafe_unretained **protocols = class_copyProtocolList(aClass, &protocolsCount);
+
+    Class<RSRestPathProvider> provider;
+
+    @try {
+        if (protocolsCount) {
+            for (long i = protocolsCount - 1; i >= 0; i--) {
+                Protocol *protocol = protocols[i];
+
+                if (protocol_conformsToProtocol(protocol, @protocol(RSRestObject))) {
+                    provider = [_configuration pathProviderForProtocol:protocol];
+                }
+            }
+        }
+    }
+    @finally {
+        if (protocols) {
+            free(protocols);
+        }
     }
 
     return provider;

@@ -15,7 +15,6 @@
  * limitations under the License.
  *
  */
-
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "RSRestKit.h"
@@ -23,7 +22,29 @@
 #import "RSGitHubUsersProvider.h"
 #import "RSGitHubUser.h"
 
-@interface RSGitHubTests : XCTestCase
+@protocol RSRestGitHubUser <RSRestObject>
+
+@end
+
+@interface RSGitHubUserSubclass : RSGitHubUser <RSRestGitHubUser>
+
+@end
+
+@implementation RSGitHubUserSubclass
+
+@end
+
+@interface RSGitHubUserSubclassSubclass : RSGitHubUserSubclass
+
+@end
+
+@implementation RSGitHubUserSubclassSubclass
+
+@end
+
+@interface RSGitHubTests : XCTestCase {
+    RSRestManagerConfiguration *_config;
+}
 
 @end
 
@@ -32,20 +53,14 @@
 - (void)setUp {
     [super setUp];
 
-    RSRestManagerConfiguration *config = [RSRestManagerConfiguration
-                                          configurationWithClient:[RSGitHubClient new]
-                                          defaultErrorHandler:nil
-                                          mappingProvider:[RSRestMappingProvider class]];
-
-    [config setPathProvider:[RSGitHubUsersProvider class] forClass:[RSGitHubUser class]];
-
-    [[RSRestManager sharedManager] configureWithConfiguration:config];
+    _config = [RSRestManagerConfiguration configurationWithClient:[RSGitHubClient new]
+                                              defaultErrorHandler:nil mappingProvider:[RSRestMappingProvider class]];
 }
 
-- (void)testGetUser {
+- (void)_testGetUserWithClass:(Class)aClass {
     NSString * const login = @"RishatShamsutdinov";
 
-    RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:[RSGitHubUser class] byId:login];
+    RSRestManagerOperation *op = [[RSRestManager sharedManager] getObjectForClass:aClass byId:login];
 
     dispatch_group_t group = dispatch_group_create();
 
@@ -65,6 +80,30 @@
     }];
 
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+}
+
+- (void)testGetUserUsingClass {
+    [_config setPathProvider:[RSGitHubUsersProvider class] forClass:[RSGitHubUser class]];
+
+    [[RSRestManager sharedManager] configureWithConfiguration:_config];
+
+    [self _testGetUserWithClass:[RSGitHubUser class]];
+}
+
+- (void)testGetUserUsingProtocol {
+    [_config setPathProvider:[RSGitHubUsersProvider class] forProtocol:@protocol(RSRestGitHubUser)];
+
+    [[RSRestManager sharedManager] configureWithConfiguration:_config];
+
+    [self _testGetUserWithClass:[RSGitHubUserSubclass class]];
+}
+
+- (void)testGetUserUsingProtocolFromSuperclass {
+    [_config setPathProvider:[RSGitHubUsersProvider class] forProtocol:@protocol(RSRestGitHubUser)];
+
+    [[RSRestManager sharedManager] configureWithConfiguration:_config];
+
+    [self _testGetUserWithClass:[RSGitHubUserSubclassSubclass class]];
 }
 
 @end

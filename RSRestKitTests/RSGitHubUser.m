@@ -15,7 +15,6 @@
  * limitations under the License.
  *
  */
-
 #import "RSGitHubUser.h"
 
 @implementation RSGitHubUser

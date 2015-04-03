@@ -17,7 +17,6 @@
  */
 
 
-
 #import "RSRestMappingProvider.h"
 #import "NSObject+ClassOfProperty.h"
 #import "NSString+KeyPathComponents.h"

@@ -17,7 +17,6 @@
  */
 
 
-
 #import "NSObject+RSRestMapping.h"
 
 @implementation NSObject (RSRestMapping)

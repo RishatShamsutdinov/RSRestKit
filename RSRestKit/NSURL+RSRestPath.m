@@ -17,7 +17,6 @@
  */
 
 
-
 #import "NSURL+RSRestPath.h"
 
 @implementation NSURL (RSRestPath)

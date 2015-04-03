@@ -17,7 +17,6 @@
  */
 
 
-
 #import "RSRestJSONDateFormatter.h"
 
 @interface RSRestJSONDateFormatter () {

@@ -17,7 +17,6 @@
  */
 
 
-
 #import "RSRestBoolean.h"
 
 @implementation RSRestBoolean

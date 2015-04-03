@@ -17,7 +17,6 @@
  */
 
 
-
 #import "NSString+KeyPathComponents.h"
 
 @implementation NSString (KeyPathComponents)
