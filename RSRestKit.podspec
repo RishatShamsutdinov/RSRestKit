@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RSRestKit"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "Simple framework for REST API with routing & mapping support"
 
   s.description  = <<-DESC

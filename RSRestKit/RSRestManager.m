@@ -80,8 +80,7 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 - (Class<RSRestPathProvider>)pathProviderForClass:(Class)aClass {
     if (!aClass) {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:[NSString stringWithFormat:@"No provider found for class: %@",
-                                               NSStringFromClass(aClass)]
+                                       reason:@"param aClass must be not nil"
                                      userInfo:nil];
     }
 
@@ -91,8 +90,15 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
         provider = [self pathProviderForProtocolFromClass:aClass];
     }
 
-    if (!provider) {
+    if (!provider && [aClass superclass]) {
         provider = [self pathProviderForClass:[aClass superclass]];
+    }
+
+    if (!provider) {
+        @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                       reason:[NSString stringWithFormat:@"No provider found for class: %@",
+                                               NSStringFromClass(aClass)]
+                                     userInfo:nil];
     }
 
     return provider;
@@ -102,15 +108,13 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
     uint protocolsCount;
     Protocol __unsafe_unretained **protocols = class_copyProtocolList(aClass, &protocolsCount);
 
-    Class<RSRestPathProvider> provider;
-
     @try {
         if (protocolsCount) {
             for (long i = protocolsCount - 1; i >= 0; i--) {
                 Protocol *protocol = protocols[i];
 
                 if (protocol_conformsToProtocol(protocol, @protocol(RSRestObject))) {
-                    provider = [_configuration pathProviderForProtocol:protocol];
+                    return [_configuration pathProviderForProtocol:protocol];
                 }
             }
         }
@@ -121,7 +125,7 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
         }
     }
 
-    return provider;
+    return nil;
 }
 
 #pragma mark - Relative URLs generation
