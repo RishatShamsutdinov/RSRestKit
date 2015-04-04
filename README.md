@@ -52,6 +52,33 @@ static NSTimeInterval const kTimeoutInterval = 30;
 @end
 ```
 
+###### Create Model
+
+```Objective-C
+@interface RSGitHubUser : NSObject
+
+@property (nonatomic) NSString *login;
+@property (nonatomic) NSDate *creationDate;
+
+@end
+```
+
+###### Create Mapping for Model
+
+```Objective-C
+#import "RSGitHubUser+Mapping.h"
+#import "RSRestMappingProvider.h"
+
+@implementation RSGitHubUser (Mapping)
+
++ (NSDictionary *)rs_mappingDictionary {
+    return @{@"login": RS_PROPERTY(login),
+             @"created_at": RS_PROPERTY(creationDate)};
+}
+
+@end
+```
+
 ###### Create Path Provider for Model
 
 ```Objective-C
@@ -90,33 +117,6 @@ RSRestManagerConfiguration *config = [RSRestManagerConfiguration
 [config setPathProvider:[RSGitHubUsersProvider class] forClass:[RSGitHubUser class]];
 
 [[RSRestManager sharedManager] configureWithConfiguration:config];
-```
-
-###### Create Model
-
-```Objective-C
-@interface RSGitHubUser : NSObject
-
-@property (nonatomic) NSString *login;
-@property (nonatomic) NSDate *creationDate;
-
-@end
-```
-
-###### Create Mapping for Model
-
-```Objective-C
-#import "RSGitHubUser+Mapping.h"
-#import "RSRestMappingProvider.h"
-
-@implementation RSGitHubUser (Mapping)
-
-+ (NSDictionary *)rs_mappingDictionary {
-    return @{@"login": RS_PROPERTY(login),
-             @"created_at": RS_PROPERTY(creationDate)};
-}
-
-@end
 ```
 
 ###### Get User by Login
