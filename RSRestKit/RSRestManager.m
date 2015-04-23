@@ -152,7 +152,7 @@ typedef void(^RSRestManagerOperationBlock)(RSRestManagerOperation *operation);
 
     NSURL *objectRelativeURL = [provider relativeURL];
 
-    if (objectID || !context) {
+    if (objectID) {
         objectRelativeURL = [objectRelativeURL rs_URLByAppendingObjectID:objectID];
     }
 
